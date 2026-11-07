@@ -1,0 +1,197 @@
+class_id,class_name,excluded,test,train,val,official_train
+0,AM General Hummer SUV 2000,0,44,38,7,45
+1,Acura RL Sedan 2012,0,32,27,5,32
+2,Acura TL Sedan 2012,0,43,37,6,43
+3,Acura TL Type-S 2008,0,42,36,6,42
+4,Acura TSX Sedan 2012,0,40,36,5,41
+5,Acura Integra Type R 2001,0,44,38,7,45
+6,Acura ZDX Hatchback 2012,0,39,33,6,39
+7,Aston Martin V8 Vantage Convertible 2012,0,45,38,7,45
+8,Aston Martin V8 Vantage Coupe 2012,0,41,35,6,41
+9,Aston Martin Virage Convertible 2012,0,33,28,5,33
+10,Aston Martin Virage Coupe 2012,1,38,31,6,38
+11,Audi RS 4 Convertible 2008,0,36,31,6,37
+12,Audi A5 Coupe 2012,0,41,35,6,41
+13,Audi TTS Coupe 2012,1,42,36,6,43
+14,Audi R8 Coupe 2012,0,43,37,6,43
+15,Audi V8 Sedan 1994,2,43,36,6,44
+16,Audi 100 Sedan 1994,2,40,33,6,41
+17,Audi 100 Wagon 1994,0,42,37,6,43
+18,Audi TT Hatchback 2011,0,40,35,6,41
+19,Audi S6 Sedan 2011,0,46,39,7,46
+20,Audi S5 Convertible 2012,0,42,36,6,42
+21,Audi S5 Coupe 2012,1,42,36,6,43
+22,Audi S4 Sedan 2012,0,39,34,6,40
+23,Audi S4 Sedan 2007,0,45,38,7,45
+24,Audi TT RS Coupe 2012,0,39,34,6,40
+25,BMW ActiveHybrid 5 Sedan 2012,0,34,29,5,34
+26,BMW 1 Series Convertible 2012,0,35,31,5,36
+27,BMW 1 Series Coupe 2012,0,41,35,6,41
+28,BMW 3 Series Sedan 2012,0,42,37,6,43
+29,BMW 3 Series Wagon 2012,0,41,36,6,42
+30,BMW 6 Series Convertible 2007,0,44,37,7,44
+31,BMW X5 SUV 2007,0,41,36,6,42
+32,BMW X6 SUV 2012,0,42,36,6,42
+33,BMW M3 Coupe 2012,0,44,38,7,45
+34,BMW M5 Sedan 2010,0,41,35,6,41
+35,BMW M6 Convertible 2010,0,41,35,6,41
+36,BMW X3 SUV 2012,0,38,33,6,39
+37,BMW Z4 Convertible 2012,0,40,35,6,41
+38,Bentley Continental Supersports Conv. Convertible 2012,0,36,31,6,37
+39,Bentley Arnage Sedan 2009,0,39,33,6,39
+40,Bentley Mulsanne Sedan 2011,0,35,31,5,36
+41,Bentley Continental GT Coupe 2012,0,34,29,6,35
+42,Bentley Continental GT Coupe 2007,1,46,38,7,46
+43,Bentley Continental Flying Spur Sedan 2007,0,44,38,7,45
+44,Bugatti Veyron 16.4 Convertible 2009,0,32,28,5,33
+45,Bugatti Veyron 16.4 Coupe 2009,1,43,37,6,44
+46,Buick Regal GS 2012,0,35,30,5,35
+47,Buick Rainier SUV 2007,0,42,37,6,43
+48,Buick Verano Sedan 2012,0,37,32,6,38
+49,Buick Enclave SUV 2012,0,42,36,6,42
+50,Cadillac CTS-V Sedan 2012,0,43,37,6,43
+51,Cadillac SRX SUV 2012,0,41,35,6,41
+52,Cadillac Escalade EXT Crew Cab 2007,0,44,38,7,45
+53,Chevrolet Silverado 1500 Hybrid Crew Cab 2012,0,40,34,6,40
+54,Chevrolet Corvette Convertible 2012,0,39,34,6,40
+55,Chevrolet Corvette ZR1 2012,0,46,40,7,47
+56,Chevrolet Corvette Ron Fellows Edition Z06 2007,0,37,32,6,38
+57,Chevrolet Traverse SUV 2012,0,44,37,7,44
+58,Chevrolet Camaro Convertible 2012,0,44,38,7,45
+59,Chevrolet HHR SS 2010,0,36,31,6,37
+60,Chevrolet Impala Sedan 2007,0,43,37,6,43
+61,Chevrolet Tahoe Hybrid SUV 2012,0,37,31,6,37
+62,Chevrolet Sonic Sedan 2012,0,44,37,7,44
+63,Chevrolet Express Cargo Van 2007,1,29,25,4,30
+64,Chevrolet Avalanche Crew Cab 2012,0,45,38,7,45
+65,Chevrolet Cobalt SS 2010,0,41,36,6,42
+66,Chevrolet Malibu Hybrid Sedan 2010,0,38,33,6,39
+67,Chevrolet TrailBlazer SS 2009,0,40,34,6,40
+68,Chevrolet Silverado 2500HD Regular Cab 2012,2,38,30,6,38
+69,Chevrolet Silverado 1500 Classic Extended Cab 2007,0,42,37,6,43
+70,Chevrolet Express Van 2007,2,35,28,5,35
+71,Chevrolet Monte Carlo Coupe 2007,0,45,38,7,45
+72,Chevrolet Malibu Sedan 2007,0,44,38,7,45
+73,Chevrolet Silverado 1500 Extended Cab 2012,0,43,37,7,44
+74,Chevrolet Silverado 1500 Regular Cab 2012,0,44,38,6,44
+75,Chrysler Aspen SUV 2009,1,43,37,6,44
+76,Chrysler Sebring Convertible 2010,0,40,35,6,41
+77,Chrysler Town and Country Minivan 2012,0,37,32,6,38
+78,Chrysler 300 SRT-8 2010,0,48,42,7,49
+79,Chrysler Crossfire Convertible 2008,0,43,37,6,43
+80,Chrysler PT Cruiser Convertible 2008,0,45,38,7,45
+81,Daewoo Nubira Wagon 2002,0,45,38,7,45
+82,Dodge Caliber Wagon 2012,1,40,34,6,41
+83,Dodge Caliber Wagon 2007,3,42,33,6,42
+84,Dodge Caravan Minivan 1997,0,43,37,7,44
+85,Dodge Ram Pickup 3500 Crew Cab 2010,0,42,37,6,43
+86,Dodge Ram Pickup 3500 Quad Cab 2009,0,44,37,7,44
+87,Dodge Sprinter Cargo Van 2009,0,39,34,6,40
+88,Dodge Journey SUV 2012,0,44,37,7,44
+89,Dodge Dakota Crew Cab 2010,0,41,35,6,41
+90,Dodge Dakota Club Cab 2007,0,38,33,6,39
+91,Dodge Magnum Wagon 2008,0,40,34,6,40
+92,Dodge Challenger SRT8 2011,0,39,33,6,39
+93,Dodge Durango SUV 2012,0,43,37,7,44
+94,Dodge Durango SUV 2007,0,45,39,7,46
+95,Dodge Charger Sedan 2012,0,41,35,6,41
+96,Dodge Charger SRT-8 2009,0,42,36,6,42
+97,Eagle Talon Hatchback 1998,0,46,39,7,46
+98,FIAT 500 Abarth 2012,0,27,24,4,28
+99,FIAT 500 Convertible 2012,0,33,29,5,34
+100,Ferrari FF Coupe 2012,0,42,36,6,42
+101,Ferrari California Convertible 2012,0,39,33,6,39
+102,Ferrari 458 Italia Convertible 2012,1,39,33,6,40
+103,Ferrari 458 Italia Coupe 2012,0,42,37,6,43
+104,Fisker Karma Sedan 2012,0,43,37,7,44
+105,Ford F-450 Super Duty Crew Cab 2012,0,41,36,6,42
+106,Ford Mustang Convertible 2007,0,44,38,7,45
+107,Ford Freestar Minivan 2007,0,44,37,7,44
+108,Ford Expedition EL SUV 2009,0,44,38,7,45
+109,Ford Edge SUV 2012,0,43,37,6,43
+110,Ford Ranger SuperCab 2011,0,42,36,6,42
+111,Ford GT Coupe 2006,0,45,39,7,46
+112,Ford F-150 Regular Cab 2012,0,42,37,6,43
+113,Ford F-150 Regular Cab 2007,0,45,38,7,45
+114,Ford Focus Sedan 2007,0,45,38,7,45
+115,Ford E-Series Wagon Van 2012,0,37,32,6,38
+116,Ford Fiesta Sedan 2012,0,42,37,6,43
+117,GMC Terrain SUV 2012,0,41,36,6,42
+118,GMC Savana Van 2012,1,68,57,10,68
+119,GMC Yukon Hybrid SUV 2012,0,42,37,6,43
+120,GMC Acadia SUV 2012,0,44,38,7,45
+121,GMC Canyon Extended Cab 2012,0,40,34,6,40
+122,Geo Metro Convertible 1993,0,44,38,7,45
+123,HUMMER H3T Crew Cab 2010,0,39,33,6,39
+124,HUMMER H2 SUT Crew Cab 2009,0,43,38,6,44
+125,Honda Odyssey Minivan 2012,0,42,36,6,42
+126,Honda Odyssey Minivan 2007,0,41,35,6,41
+127,Honda Accord Coupe 2012,0,39,33,6,39
+128,Honda Accord Sedan 2012,0,38,33,6,39
+129,Hyundai Veloster Hatchback 2012,0,41,35,6,41
+130,Hyundai Santa Fe SUV 2012,0,42,36,6,42
+131,Hyundai Tucson SUV 2012,0,43,37,7,44
+132,Hyundai Veracruz SUV 2012,0,42,36,6,42
+133,Hyundai Sonata Hybrid Sedan 2012,0,33,29,5,34
+134,Hyundai Elantra Sedan 2007,0,42,36,6,42
+135,Hyundai Accent Sedan 2012,0,24,20,4,24
+136,Hyundai Genesis Sedan 2012,0,43,37,7,44
+137,Hyundai Sonata Sedan 2012,0,39,34,6,40
+138,Hyundai Elantra Touring Hatchback 2012,0,42,37,6,43
+139,Hyundai Azera Sedan 2012,0,42,36,6,42
+140,Infiniti G Coupe IPL 2012,0,34,29,5,34
+141,Infiniti QX56 SUV 2011,0,32,28,5,33
+142,Isuzu Ascender SUV 2008,0,40,34,6,40
+143,Jaguar XK XKR 2012,0,46,40,7,47
+144,Jeep Patriot SUV 2012,0,44,37,7,44
+145,Jeep Wrangler SUV 2012,0,43,37,6,43
+146,Jeep Liberty SUV 2012,0,44,39,6,45
+147,Jeep Grand Cherokee SUV 2012,0,45,38,7,45
+148,Jeep Compass SUV 2012,0,42,37,6,43
+149,Lamborghini Reventon Coupe 2008,0,36,31,5,36
+150,Lamborghini Aventador Coupe 2012,0,43,37,7,44
+151,Lamborghini Gallardo LP 570-4 Superleggera 2012,0,35,31,5,36
+152,Lamborghini Diablo Coupe 2001,0,44,38,7,45
+153,Land Rover Range Rover SUV 2012,0,42,37,6,43
+154,Land Rover LR2 SUV 2012,0,42,37,6,43
+155,Lincoln Town Car Sedan 2011,0,39,33,6,39
+156,MINI Cooper Roadster Convertible 2012,0,36,31,6,37
+157,Maybach Landaulet Convertible 2012,0,29,25,4,29
+158,Mazda Tribute SUV 2011,0,36,31,5,36
+159,McLaren MP4-12C Coupe 2012,0,44,37,7,44
+160,Mercedes-Benz 300-Class Convertible 1993,0,48,41,7,48
+161,Mercedes-Benz C-Class Sedan 2012,0,45,39,7,46
+162,Mercedes-Benz SL-Class Coupe 2009,0,36,31,6,37
+163,Mercedes-Benz E-Class Sedan 2012,0,43,37,7,44
+164,Mercedes-Benz S-Class Sedan 2012,0,44,38,7,45
+165,Mercedes-Benz Sprinter Van 2012,0,41,35,6,41
+166,Mitsubishi Lancer Sedan 2012,0,47,41,7,48
+167,Nissan Leaf Hatchback 2012,0,42,36,6,42
+168,Nissan NV Passenger Van 2012,0,38,33,6,39
+169,Nissan Juke Hatchback 2012,0,44,37,7,44
+170,Nissan 240SX Coupe 1998,0,46,39,7,46
+171,Plymouth Neon Coupe 1999,0,44,37,7,44
+172,Porsche Panamera Sedan 2012,0,43,37,7,44
+173,Ram C/V Cargo Van Minivan 2012,0,41,35,6,41
+174,Rolls-Royce Phantom Drophead Coupe Convertible 2012,0,30,26,5,31
+175,Rolls-Royce Ghost Sedan 2012,1,38,32,6,39
+176,Rolls-Royce Phantom Sedan 2012,1,44,36,7,44
+177,Scion xD Hatchback 2012,0,41,36,6,42
+178,Spyker C8 Convertible 2009,1,45,37,7,45
+179,Spyker C8 Coupe 2009,0,42,37,6,43
+180,Suzuki Aerio Sedan 2007,0,38,32,6,38
+181,Suzuki Kizashi Sedan 2012,0,46,39,7,46
+182,Suzuki SX4 Hatchback 2012,0,42,36,6,42
+183,Suzuki SX4 Sedan 2012,0,40,35,6,41
+184,Tesla Model S Sedan 2012,0,38,33,6,39
+185,Toyota Sequoia SUV 2012,0,38,33,6,39
+186,Toyota Camry Sedan 2012,0,43,37,7,44
+187,Toyota Corolla Sedan 2012,0,43,37,7,44
+188,Toyota 4Runner SUV 2012,0,40,35,6,41
+189,Volkswagen Golf Hatchback 2012,0,43,37,6,43
+190,Volkswagen Golf Hatchback 1991,0,46,39,7,46
+191,Volkswagen Beetle Hatchback 2012,0,42,37,6,43
+192,Volvo C30 Hatchback 2012,0,41,36,6,42
+193,Volvo 240 Sedan 1993,0,45,39,7,46
+194,Volvo XC90 SUV 2007,0,43,37,6,43
+195,smart fortwo Convertible 2012,0,40,34,6,40

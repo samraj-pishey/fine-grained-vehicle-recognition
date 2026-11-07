@@ -1,0 +1,26 @@
+# Classical CV branch (HOG + LBP + HSV -> family scaling -> optional PCA -> calibrated RBF-SVM).
+# All fits use the TRAIN subset; all selection uses the VAL subset (both from the official train split).
+feature_config:          # FeatureConfig v1 (src/vehicle_recognition/classical/features.py)
+  version: 1
+  resize_wh: [160, 96]
+  clahe: false
+  hog_orientations: 9
+  hog_pixels_per_cell: [16, 16]
+  hog_cells_per_block: [2, 2]
+  lbp_points: 8
+  lbp_radius: 1
+  lbp_grid: [4, 4]
+  hsv_bins: [8, 4, 4]
+roi_pad_frac: 0.05       # identical to the deep classifier's ROI policy
+svm:
+  C_grid: [1.0, 10.0, 100.0]   # selected on validation with the full feature set
+  gamma: scale
+  calibration: sigmoid
+  calibration_cv: 5
+ablation:
+  families: [[hog], [lbp], [hsv], [hog, lbp], [hog, hsv], [lbp, hsv], [hog, lbp, hsv]]
+  pca: [null, 0.95, 256]       # null = no PCA; float = variance fraction; int = components
+preprocessing_check:           # controlled preprocessing comparison on the full feature set
+  - {name: baseline, clahe: false}
+  - {name: clahe, clahe: true}
+workers: 4

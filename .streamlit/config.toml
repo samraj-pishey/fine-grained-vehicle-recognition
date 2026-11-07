@@ -1,0 +1,25 @@
+[server]
+maxUploadSize = 10          # MB; content limits are enforced again in image_io
+enableXsrfProtection = true
+fileWatcherType = "none"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+font = "sans-serif"
+
+[theme.light]
+primaryColor = "#1d4e89"
+backgroundColor = "#fbfaf7"
+secondaryBackgroundColor = "#eef1f5"
+textColor = "#1f2933"
+
+[theme.dark]
+primaryColor = "#7fb3e8"
+backgroundColor = "#11151c"
+secondaryBackgroundColor = "#1b2230"
+textColor = "#e6e9ef"

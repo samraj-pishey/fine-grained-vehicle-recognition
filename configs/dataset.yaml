@@ -1,0 +1,13 @@
+# Dataset configuration. DATA_ROOT env var (or .env) overrides data_root.
+# Relative paths are resolved against the repository root.
+data_root: data_root
+num_classes: 196
+expected_counts: {train: 8144, test: 8041}
+split:
+  seed: 20261106
+  val_fraction: 0.15        # stratified per class, from the OFFICIAL TRAIN split only
+validation:
+  near_duplicate_phash_max_distance: 4   # candidates screened by pHash, confirmed by SSIM
+  near_duplicate_ssim_min: 0.90
+  min_side_px: 32
+  max_side_px: 6000

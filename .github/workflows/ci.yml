@@ -1,0 +1,56 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: astral-sh/setup-uv@v6
+      - name: Install (runtime + dev, from uv.lock)
+        run: uv sync --extra dev --frozen --python 3.11
+      - name: Secret / restricted-asset scan
+        run: uv run python scripts/secret_scan.py
+      - name: Lint
+        run: uv run ruff check src scripts tests app.py
+      - name: Tests (dataset/model tests skip automatically in CI)
+        run: uv run pytest -q
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ensure deployment bundle dir exists (bundle may be fetched at runtime)
+        run: mkdir -p artifacts/deployment reports/results && ls -la artifacts/deployment
+      - name: Build image (linux/amd64)
+        run: docker build -t vehicle-recognition:ci .
+      - name: Image facts
+        run: |
+          docker image inspect vehicle-recognition:ci --format 'size={{.Size}} arch={{.Architecture}}'
+          docker run --rm vehicle-recognition:ci id -u | grep -qx 1000
+          docker run --rm vehicle-recognition:ci python -c "import torch" 2>/dev/null && { echo "torch must not be in the runtime image"; exit 1; } || echo "no torch: ok"
+      - name: Start container and wait for health
+        run: |
+          docker run -d --name app -p 7860:7860 vehicle-recognition:ci
+          start=$(date +%s)
+          for i in $(seq 1 90); do
+            if curl -fsS http://127.0.0.1:7860/_stcore/health >/dev/null; then echo "healthy after $(( $(date +%s) - start ))s"; break; fi
+            sleep 2
+          done
+          curl -fsS http://127.0.0.1:7860/_stcore/health
+          curl -fsS http://127.0.0.1:7860/ | grep -qi "<title>" && echo "index served"
+      - name: In-container end-to-end smoke test
+        run: docker exec app python -m vehicle_recognition.inference.smoke
+      - name: Logs
+        if: always()
+        run: docker logs app | tail -50

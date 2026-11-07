@@ -1,0 +1,231 @@
+{
+  "generated_utc": "2026-11-07T03:03:18+00:00",
+  "archives": [
+    {
+      "file": "car_devkit.tgz",
+      "original_url": "https://ai.stanford.edu/~jkrause/cars/car_devkit.tgz",
+      "retrieval_url": "https://web.archive.org/web/20221212052731id_/https://ai.stanford.edu/~jkrause/cars/car_devkit.tgz",
+      "retrieved_utc": "2026-11-06T09:56:11Z",
+      "bytes": 330960,
+      "sha256": "b97deb463af7d58b6bfaa18b2a4de9829f0f79e8ce663dfa9261bf7810e9accd",
+      "present": true,
+      "members": 7,
+      "member_files": 6,
+      "uncompressed_bytes": 377949,
+      "top_level": [
+        "devkit"
+      ]
+    },
+    {
+      "file": "cars_test_annos_withlabels.mat",
+      "original_url": "http://ai.stanford.edu/~jkrause/car196/cars_test_annos_withlabels.mat",
+      "retrieval_url": "https://web.archive.org/web/20221212052731id_/http://ai.stanford.edu/~jkrause/car196/cars_test_annos_withlabels.mat",
+      "retrieved_utc": "2026-11-06T09:56:13Z",
+      "bytes": 185758,
+      "sha256": "790f75be8ea34eeded134cc559332baf23e30e91367e9ddca97d26ed9b895f05",
+      "present": true
+    },
+    {
+      "file": "cars_train.tgz",
+      "original_url": "http://ai.stanford.edu/~jkrause/car196/cars_train.tgz",
+      "retrieval_url": "https://web.archive.org/web/20221212052731id_/http://ai.stanford.edu/~jkrause/car196/cars_train.tgz",
+      "retrieved_utc": "2026-11-06T10:38:01Z",
+      "bytes": 979269282,
+      "sha256": "512b227b30e2f0a8aab9e09485786ab4479582073a144998da74d64b801fd288",
+      "present": true,
+      "members": 8145,
+      "member_files": 8144,
+      "uncompressed_bytes": 995397468,
+      "top_level": [
+        "cars_train"
+      ]
+    },
+    {
+      "file": "cars_test.tgz",
+      "original_url": "http://ai.stanford.edu/~jkrause/car196/cars_test.tgz",
+      "retrieval_url": "https://web.archive.org/web/20221212052731id_/http://ai.stanford.edu/~jkrause/car196/cars_test.tgz",
+      "retrieved_utc": "2026-11-06T10:38:07Z",
+      "bytes": 977350468,
+      "sha256": "bffea656d6f425cba3c91c6d83336e4c5f86c6cffd8975b0f375d3a10da8e243",
+      "present": true,
+      "members": 8042,
+      "member_files": 8041,
+      "uncompressed_bytes": 994257435,
+      "top_level": [
+        "cars_test"
+      ]
+    }
+  ],
+  "raw_extracted": {
+    "root": "/Users/samrajpishey/Projects/vehicle-recognition/data_root/raw_extracted",
+    "total_bytes": 1990218610,
+    "files_by_extension": {
+      ".jpg": 16185,
+      ".mat": 4,
+      ".m": 1,
+      ".txt": 2
+    },
+    "files_per_directory": {
+      "cars_test": 8041,
+      "cars_train": 8144,
+      "devkit": 6,
+      "test_labels": 1
+    },
+    "filenames_in_multiple_dirs": 8041,
+    "filenames_in_multiple_dirs_example": {
+      "04354.jpg": [
+        "cars_train",
+        "cars_test"
+      ],
+      "02725.jpg": [
+        "cars_train",
+        "cars_test"
+      ],
+      "07885.jpg": [
+        "cars_train",
+        "cars_test"
+      ],
+      "06543.jpg": [
+        "cars_train",
+        "cars_test"
+      ],
+      "00132.jpg": [
+        "cars_train",
+        "cars_test"
+      ]
+    }
+  },
+  "validation_summary": {
+    "counts": {
+      "test": 8041,
+      "train": 8144
+    },
+    "subset_counts": {
+      "excluded": 24,
+      "test": 8041,
+      "train": 6905,
+      "val": 1215
+    },
+    "expected_counts": {
+      "train": 8144,
+      "test": 8041
+    },
+    "counts_match_official": {
+      "train": true,
+      "test": true
+    },
+    "classes_in_train": 196,
+    "classes_in_test": 196,
+    "class_id_range": [
+      0,
+      195
+    ],
+    "missing_referenced_files": [],
+    "unreferenced_image_files": [],
+    "n_unreferenced_image_files": 0,
+    "images_with_multiple_annotations": 0,
+    "decode_failures": 0,
+    "non_positive_boxes": 0,
+    "out_of_bounds_boxes": 0,
+    "out_of_bounds_by_split": {},
+    "max_oob_overshoot_px": 0.0,
+    "coordinate_convention_evidence": {
+      "test": {
+        "n": 8041,
+        "orig_x1_eq_0": 0,
+        "orig_y1_eq_0": 0,
+        "orig_x1_eq_1": 160,
+        "orig_y1_eq_1": 101,
+        "orig_x2_eq_width": 207,
+        "orig_y2_eq_height": 177,
+        "orig_x2_gt_width": 0,
+        "orig_y2_gt_height": 0,
+        "orig_x2_eq_width_minus_1": 127
+      },
+      "train": {
+        "n": 8144,
+        "orig_x1_eq_0": 0,
+        "orig_y1_eq_0": 0,
+        "orig_x1_eq_1": 179,
+        "orig_y1_eq_1": 102,
+        "orig_x2_eq_width": 224,
+        "orig_y2_eq_height": 170,
+        "orig_x2_gt_width": 0,
+        "orig_y2_gt_height": 0,
+        "orig_x2_eq_width_minus_1": 133
+      }
+    },
+    "modes": {
+      "RGB": 16151,
+      "L": 34
+    },
+    "formats": {
+      "JPEG": 16185
+    },
+    "exif_orientation_not_1": 33,
+    "width": {
+      "count": 16185.0,
+      "mean": 700.5,
+      "std": 453.2,
+      "min": 78.0,
+      "25%": 429.0,
+      "50%": 640.0,
+      "75%": 800.0,
+      "max": 7800.0
+    },
+    "height": {
+      "count": 16185.0,
+      "mean": 483.2,
+      "std": 318.3,
+      "min": 41.0,
+      "25%": 290.0,
+      "50%": 426.0,
+      "75%": 540.0,
+      "max": 5400.0
+    },
+    "min_side_below_threshold": 0,
+    "max_side_above_threshold": 1,
+    "box_area_frac": {
+      "count": 16185.0,
+      "mean": 0.5504,
+      "std": 0.1702,
+      "min": 0.0318,
+      "25%": 0.4303,
+      "50%": 0.5469,
+      "75%": 0.6685,
+      "max": 1.0
+    },
+    "per_class_train_min_max_mean": [
+      24,
+      68,
+      41.55
+    ],
+    "rarest_train_classes": {
+      "Hyundai Accent Sedan 2012": 24,
+      "FIAT 500 Abarth 2012": 28,
+      "Maybach Landaulet Convertible 2012": 29,
+      "Chevrolet Express Cargo Van 2007": 30,
+      "Rolls-Royce Phantom Drophead Coupe Convertible 2012": 31
+    },
+    "duplicates": {
+      "exact_sha256": 39,
+      "near_rejected": 13,
+      "near_confirmed": 7
+    },
+    "cross_split_duplicates": {
+      "exact_sha256": 19,
+      "near_rejected": 8,
+      "near_confirmed": 5
+    },
+    "label_conflicting_duplicate_pairs": 44,
+    "label_conflicting_cross_split_pairs": 23,
+    "exif_rotating_tags": [
+      "cars_train/07389.jpg"
+    ],
+    "exclusions": {
+      "cross_split_duplicate": 24
+    },
+    "runtime_s": 42.8,
+    "split_manifest_sha256": "1127fb326fdf37dab4adf206195baaedbee15a26f6005983f73dc9df98baf203"
+  }
+}

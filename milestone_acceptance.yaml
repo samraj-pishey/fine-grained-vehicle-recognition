@@ -1,0 +1,54 @@
+# Machine-readable task ledger (spec 15_EXECUTION_CHECKLIST_AND_ACCEPTANCE.md).
+# Statuses: PENDING, IN_PROGRESS, PASS, CONDITIONAL_PASS, FAIL, BLOCKED, NOT_RUN. PASS requires evidence.
+updated: 2026-11-07
+A_environment:
+  mac_report: {status: PASS, evidence: reports/environment.md}
+  python_git_versions: {status: PASS, evidence: reports/environment.md, uv.lock}
+  github_auth: {status: PASS, evidence: "public repo samraj-pishey/fine-grained-vehicle-recognition"}
+  hosting_account: {status: CONDITIONAL_PASS, note: "HF Docker/Gradio Spaces need a paid plan (docs checked 2026-11-06); user chose Streamlit Community Cloud (free)"}
+  cloud_plan: {status: PASS, evidence: "notebooks/kaggle (used: free Tesla T4, 4h47m), notebooks/colab"}
+  free_only_guardrail: {status: PASS, note: "no paid service used"}
+B_dataset:
+  official_source_verified: {status: CONDITIONAL_PASS, evidence: configs/dataset_sources.yaml, note: "official host offline; Internet Archive captures byte-identical to original (MD5 = torchvision pins)"}
+  terms_reviewed: {status: PASS, evidence: THIRD_PARTY_NOTICES.md}
+  acquired_and_checksummed: {status: PASS, evidence: reports/dataset/acquisition_manifest.tsv}
+  structure_parser_mapping: {status: PASS, evidence: "reports/dataset/*, tests/test_annotations.py"}
+  bbox_visual_audit: {status: PASS, note: "32 overlays reviewed (not committed: dataset images)"}
+  split_counts_reconciled: {status: PASS, evidence: "8144/8041/196; split sha256 1127fb32... reproduced after rebuild"}
+  duplicate_leakage_audit: {status: PASS, evidence: reports/dataset/duplicate_audit.csv, note: "24 cross-split train copies excluded; 44 label-conflicting pairs documented"}
+  validation_report: {status: PASS, evidence: reports/dataset/dataset_validation_report.md}
+C_classical:
+  hog_lbp_hsv_pipelines: {status: PASS, evidence: "src/vehicle_recognition/classical, tests/test_classical.py"}
+  family_ablation_pca_calibrated_svm: {status: PASS, evidence: reports/results/classical_ablation.json}
+  class_alignment_196: {status: PASS, evidence: tests/test_classical.py}
+  visualisations: {status: PASS, evidence: "app Classical CV tab; reports/figures/fig_classical_ablation.png"}
+D_detection_classification:
+  yolo26n_yolo11n: {status: PASS, evidence: reports/results/detector_comparison.json}
+  mobilenetv3_efficientnetv2: {status: PASS, evidence: reports/results/classifier_comparison.json}
+  gt_roi_and_predicted_roi_tracks: {status: PASS, evidence: "reports/results/pipeline/val_det_yolo26n.json, final_test.json"}
+  convnext_teacher: {status: NOT_RUN, note: "optional in spec; no clear justification, compute reserved for required runs"}
+  resolution_320: {status: NOT_RUN, note: "224 and 288 compared; 320 omitted for compute"}
+E_hybrid_confidence:
+  calibration_temperature_ece: {status: PASS, evidence: reports/results/calibration.json}
+  fusion_alpha_on_validation: {status: PASS, evidence: reports/results/fusion.json, note: "alpha=1.0, hybrid not adopted"}
+  rejection_threshold: {status: PASS, evidence: reports/results/selective.json}
+F_research_integrity:
+  robustness_6_conditions: {status: CONDITIONAL_PASS, evidence: reports/results/robustness.json, note: "392 validation images (reduced from 600 for time)"}
+  failure_cases: {status: PASS, evidence: reports/results/failure_cases.json, note: "12 genuine cases, visually reviewed"}
+  test_freeze_and_single_evaluation: {status: PASS, evidence: "reports/results/freeze_record.json, final_test.json (commit 7dc0e0a)"}
+  academic_report: {status: PASS, evidence: reports/ACADEMIC_REPORT.md}
+G_optimisation:
+  onnx_parity: {status: PASS, note: "200/200 top-1 agreement, max |dlogit| 1.5e-5"}
+  int8_classifier: {status: FAIL, note: "static INT8 collapsed to 1% top-1 (MinMax); percentile calibration OOM on 8 GB; FP32 deployed"}
+  int8_detector: {status: CONDITIONAL_PASS, note: "works with detection head kept FP32 (3.4 MB, IoU 0.988 vs FP32); not deployed (latency not benchmarked)"}
+  cpu_thread_and_resolution_benchmark: {status: PASS, evidence: reports/results/benchmark.json}
+  hosted_latency: {status: NOT_RUN, note: "to measure on Streamlit Cloud"}
+H_application_security:
+  streamlit_tabs_states_themes: {status: PASS, evidence: "tests/test_app.py, tests/test_app_e2e.py, .streamlit/config.toml"}
+  upload_hardening: {status: PASS, evidence: tests/test_image_io.py}
+  secret_scan: {status: PASS, evidence: scripts/secret_scan.py (0 findings, every commit)}
+I_deployment_handover:
+  docker_build_linux: {status: PASS, evidence: ".github/workflows/ci.yml (GitHub Actions: build, non-root, health, smoke)"}
+  public_github_repo: {status: PASS, evidence: https://github.com/samraj-pishey/fine-grained-vehicle-recognition}
+  public_app: {status: PASS, evidence: https://vehicle-recognition.streamlit.app, note: "Streamlit Community Cloud (not HF Spaces, see A)"}
+  readme_docs: {status: PASS, evidence: README.md}

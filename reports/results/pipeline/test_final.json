@@ -1,0 +1,107 @@
+{
+ "split": "OFFICIAL TEST",
+ "name": "final",
+ "detector_path": "detector.onnx",
+ "detector": {
+  "images": 8041,
+  "conf_threshold": 0.25,
+  "match_iou": 0.5,
+  "miss_rate": 0.0008705384902375327,
+  "no_detection_rate": 0.0002487252829250093,
+  "iou_mean": 0.9576053507799146,
+  "iou_median": 0.9698976409207979,
+  "iou_p10": 0.9218792472252941,
+  "top_box_iou_ge_0.5": 0.99850764830245,
+  "dets_per_image": {
+   "0": 2,
+   "1": 8000,
+   "2": 36,
+   "3": 3
+  },
+  "images_with_unmatched_dets": 0.004352692451187664,
+  "cpu_det_ms_p50": 75.81758299784269,
+  "cpu_det_ms_p95": 114.28787500335602,
+  "iou_hist": {
+   "bins": [
+    0.025,
+    0.075,
+    0.125,
+    0.175,
+    0.225,
+    0.275,
+    0.325,
+    0.375,
+    0.425,
+    0.475,
+    0.525,
+    0.575,
+    0.625,
+    0.675,
+    0.725,
+    0.775,
+    0.825,
+    0.875,
+    0.925,
+    0.975
+   ],
+   "counts": [
+    2,
+    0,
+    0,
+    0,
+    2,
+    1,
+    0,
+    0,
+    2,
+    0,
+    1,
+    2,
+    4,
+    21,
+    25,
+    64,
+    129,
+    261,
+    1312,
+    6215
+   ]
+  }
+ },
+ "tracks": {
+  "A_gt_roi": {
+   "n": 8041,
+   "top1": 0.9411764705882353,
+   "top5": 0.9894291754756871,
+   "macro_f1": 0.9401949609209577,
+   "mean_per_class_acc": 0.9405245919199418,
+   "worst_class_acc": 0.5714285714285714,
+   "denominator": 8041
+  },
+  "B_pred_roi_matched_only": {
+   "n": 8034,
+   "top1": 0.9413741598207618,
+   "top5": 0.9884241971620612,
+   "macro_f1": 0.9404056054544127,
+   "mean_per_class_acc": 0.9407558208707325,
+   "worst_class_acc": 0.45714285714285713,
+   "denominator": 8034
+  },
+  "B_pred_roi_all_images_top1": {
+   "top1": 0.9405546573809228,
+   "denominator": 8041,
+   "misses_counted_as_errors": true
+  },
+  "B_crop_induced_prediction_changes": {
+   "rate": 0.011326860841423949,
+   "denominator": 8034
+  },
+  "C_end_to_end": {
+   "success_rate": 0.9401815694565353,
+   "denominator": 8041,
+   "class_acc_given_correct_box": 0.941586748038361,
+   "rule": "top-confidence box with IoU>=0.5 to GT AND correct top-1"
+  }
+ },
+ "cpu_cls_ms_p50": 117.57945799763547
+}

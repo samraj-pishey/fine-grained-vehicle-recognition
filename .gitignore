@@ -1,0 +1,41 @@
+# --- Data & artefacts: NEVER commit ---
+data_root/
+data/*
+!data/README.md
+artifacts/
+!artifacts/README.md
+runs/
+*.tgz
+*.tar
+*.zip
+*.mat
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz
+*.npy
+*.joblib
+*.pkl
+*.parquet
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+*.token
+# --- Python / tooling ---
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.DS_Store
+.streamlit/secrets.toml
+
+# Claude Code personal settings
+.claude/settings.local.json

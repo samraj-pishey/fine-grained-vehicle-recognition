@@ -1,0 +1,6 @@
+# Pinned extras for cloud GPU training. torch/torchvision/numpy/pandas/opencv/pillow come from the platform's
+# preinstalled CUDA image (Colab/Kaggle); their exact versions are recorded in every run's env.json.
+ultralytics==8.4.203
+onnx==1.23.2
+onnxslim==0.1.99
+pyyaml>=6.0

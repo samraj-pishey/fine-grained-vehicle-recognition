@@ -1,0 +1,25 @@
+# GPU experiment plan executed by scripts/run_training_plan.py (Colab or Kaggle).
+# Every stage is idempotent: a stage with a DONE marker in its output directory is skipped; an interrupted
+# stage resumes from its last verified checkpoint. Change one principal factor at a time.
+detector:
+  common: {epochs: 40, imgsz: 640, batch: 32, patience: 12, seed: 42}
+  runs:
+    - {name: det_yolo26n, model: yolo26n.pt}
+    - {name: det_yolo11n, model: yolo11n.pt}
+
+classifier:
+  common: {epochs: 40, freeze_epochs: 2, batch_size: 64, lr: 0.001, backbone_lr_mult: 0.3, weight_decay: 0.05,
+           label_smoothing: 0.1, aug: moderate, sampler: none, patience: 10, seed: 42, amp: true}
+  runs:
+    # --- architecture x resolution (primary comparison) ---
+    - {name: cls_mnv3l_224, arch: mobilenet_v3_large, img_size: 224}
+    - {name: cls_mnv3l_288, arch: mobilenet_v3_large, img_size: 288}
+    - {name: cls_effv2s_224, arch: efficientnet_v2_s, img_size: 224}
+    - {name: cls_effv2s_288, arch: efficientnet_v2_s, img_size: 288}
+    # --- augmentation ablation (cheap backbone) ---
+    - {name: cls_mnv3l_224_auglight, arch: mobilenet_v3_large, img_size: 224, aug: light}
+    # --- class-imbalance comparison: ordinary sampling vs class-weighted loss ---
+    - {name: cls_mnv3l_224_cwloss, arch: mobilenet_v3_large, img_size: 224, class_weighted_loss: true}
+    # --- seed repeats for variance estimate of the baseline ---
+    - {name: cls_mnv3l_224_s1, arch: mobilenet_v3_large, img_size: 224, seed: 1}
+    - {name: cls_mnv3l_224_s2, arch: mobilenet_v3_large, img_size: 224, seed: 2}

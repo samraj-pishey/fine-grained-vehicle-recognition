@@ -1,0 +1,28 @@
+# Pinned identity of the ORIGINAL Stanford Cars release files.
+# Retrieved 2026-11-06 from Internet Archive raw captures (20221212052731, "id_") of the official URLs because
+# ai.stanford.edu is offline. Independent verification: every MD5 below equals the checksum that torchvision
+# v0.13.0 pinned for the original ai.stanford.edu downloads
+# (https://github.com/pytorch/vision/blob/v0.13.0/torchvision/datasets/stanford_cars.py), i.e. the files are
+# byte-identical to the official release.
+wayback_prefix: "https://web.archive.org/web/20221212052731id_/"
+files:
+  car_devkit.tgz:
+    official_url: https://ai.stanford.edu/~jkrause/cars/car_devkit.tgz
+    bytes: 330960
+    sha256: b97deb463af7d58b6bfaa18b2a4de9829f0f79e8ce663dfa9261bf7810e9accd
+    md5: c3b158d763b6e2245038c8ad08e45376
+  cars_train.tgz:
+    official_url: http://ai.stanford.edu/~jkrause/car196/cars_train.tgz
+    bytes: 979269282
+    sha256: 512b227b30e2f0a8aab9e09485786ab4479582073a144998da74d64b801fd288
+    md5: 065e5b463ae28d29e77c1b4b166cfe61
+  cars_test.tgz:
+    official_url: http://ai.stanford.edu/~jkrause/car196/cars_test.tgz
+    bytes: 977350468
+    sha256: bffea656d6f425cba3c91c6d83336e4c5f86c6cffd8975b0f375d3a10da8e243
+    md5: 4ce7ebf6a94d07f1952d94dd34c4d501
+  cars_test_annos_withlabels.mat:
+    official_url: http://ai.stanford.edu/~jkrause/car196/cars_test_annos_withlabels.mat
+    bytes: 185758
+    sha256: 790f75be8ea34eeded134cc559332baf23e30e91367e9ddca97d26ed9b895f05
+    md5: b0a2b23655a3edd16d84508592a98d10

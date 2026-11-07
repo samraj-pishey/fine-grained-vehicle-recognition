@@ -1,0 +1,26 @@
+{
+ "frozen_commit": "7dc0e0ae1661d6c3ed31c7a3ced2fe1e8dd23a61",
+ "frozen_utc": "2026-11-07T03:04:18Z",
+ "manifest_sha256": "3ae6a424777ad8e6e206d7c20156288d4ee78cd5dc2af8a25e1a59d17a816206",
+ "model_bundle_id": "vr-yolo26n-efficientnet_v2_s-288-fp32-21bcac1",
+ "decision": {
+  "selected_classifier_run": "cls_effv2s_288",
+  "mode": "deep_only",
+  "temperature": 0.771458540855987,
+  "classical_temperature": 0.8602310206236644,
+  "fusion_alpha": null,
+  "reject_threshold": 0.39700397765922896,
+  "threshold_policy": "largest coverage with validation selective accuracy >= 95% (deep-only calibrated probabilities)",
+  "fitted_on": "full validation subset (official train split)"
+ },
+ "config_sha256": {
+  "classical.yaml": "22a3f43a66740a4de4d2c5bf222ad6a3734e17fb7d9afc8eb100e3550e56141e",
+  "dataset.yaml": "f3457deaeb88d81a1c38acb694211e390aeb6c05ee49cc480b644fd1788f34f1",
+  "dataset_sources.yaml": "6a26706ab177ad130ab4ee2d050f04c18b7255abfada72bba407043e5f485ebc",
+  "deployment.yaml": "962c0a249119bed69c2c529144140696bbe3c9e812d6829e359bed2e822e2cba",
+  "split_assignment.csv": "60d085631b0e1dda789617c5fa732ba0fec82ce24ad4a08897478b1368dabc2f",
+  "training_plan.yaml": "2d746ff081624a03383af14487efd8f7f6f8677c0f30123d1463610f96870e77"
+ },
+ "classical_model_sha256": "4b966f4219443a3086fb745fa244a6cf9beae8b9d23505328e253c7b334d6a95",
+ "rerun_disclosure": null
+}

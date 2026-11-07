@@ -1,0 +1,12 @@
+# Production deployment. If artifacts/deployment/ is absent (e.g. on Streamlit Community Cloud), the bundle
+# (manifest + ONNX models + class mapping) is downloaded once from a pinned, public GitHub Release of this repo;
+# the manifest SHA-256 is pinned here and every file is verified against the manifest.
+model_release:
+  github_repo: samraj-pishey/fine-grained-vehicle-recognition
+  tag: models-v1
+  manifest_sha256: 3ae6a424777ad8e6e206d7c20156288d4ee78cd5dc2af8a25e1a59d17a816206
+runtime:
+  ort_intra_op_threads: 2
+  ort_inter_op_threads: 1
+  max_concurrent_inferences: 1
+  inference_timeout_s: 60

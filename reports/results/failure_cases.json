@@ -1,0 +1,660 @@
+{
+ "split": "OFFICIAL TEST (post-freeze analysis only)",
+ "n_candidates": 479,
+ "n_wrong_top1": 473,
+ "category_counts_among_candidates": {
+  "similar_generation": 142,
+  "detector_miss": 7,
+  "low_resolution": 59,
+  "lighting": 9,
+  "viewpoint": 22,
+  "occlusion_truncation": 43
+ },
+ "rules": "use transparent, measurable rules (reported with each case) and are confirmed by visual review:\n  similar_generation  wrong class with the same make+model text, different year/variant\n  detector_miss       no detection with IoU >= 0.5 (or best IoU < 0.5)\n  low_resolution      ground-truth box shorter side < 120 px\n  lighting            ROI mean luminance < 60 or > 200\n  viewpoint           box aspect ratio w/h < 1.15 (near-frontal / rear view)\n  occlusion_truncation  GT box touches the image border (vehicle cut off) - truncation proxy for occlusion",
+ "cases": [
+  {
+   "image_id": "cars_test/06375.jpg",
+   "split": "test",
+   "true_class": "Dodge Ram Pickup 3500 Crew Cab 2010",
+   "predicted_class": "Dodge Ram Pickup 3500 Quad Cab 2009",
+   "top5": [
+    {
+     "class": "Dodge Ram Pickup 3500 Quad Cab 2009",
+     "p": 0.9927
+    },
+    {
+     "class": "Suzuki Aerio Sedan 2007",
+     "p": 0.0001
+    },
+    {
+     "class": "Plymouth Neon Coupe 1999",
+     "p": 0.0001
+    },
+    {
+     "class": "Acura Integra Type R 2001",
+     "p": 0.0001
+    },
+    {
+     "class": "Ford F-150 Regular Cab 2007",
+     "p": 0.0001
+    }
+   ],
+   "classification_confidence": 0.9927,
+   "detection_confidence": 0.9431878328323364,
+   "gt_box": [
+    0.0,
+    84.0,
+    576.0,
+    311.0
+   ],
+   "best_iou": 0.95,
+   "classical_prediction": "Chevrolet Express Van 2007",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "similar_generation",
+    "occlusion_truncation"
+   ],
+   "roi_mean_luminance": 105.9,
+   "box_wh": [
+    576,
+    227
+   ],
+   "correct": false,
+   "category": "similar_generation",
+   "diagnosis": "rule-based category 'similar_generation'; high-confidence error | visual review: Side view of a pickup; Crew Cab (2010) vs Quad Cab (2009) differ mainly in rear-door size - a genuinely fine distinction between near-identical generations.",
+   "proposed_improvement": "higher input resolution / part-focused crops (grille, lights) or fine-grained attention; more examples of the confusable pair",
+   "improvement_tested": false,
+   "visual_review": "Side view of a pickup; Crew Cab (2010) vs Quad Cab (2009) differ mainly in rear-door size - a genuinely fine distinction between near-identical generations."
+  },
+  {
+   "image_id": "cars_test/05760.jpg",
+   "split": "test",
+   "true_class": "Honda Accord Coupe 2012",
+   "predicted_class": "Honda Accord Sedan 2012",
+   "top5": [
+    {
+     "class": "Honda Accord Sedan 2012",
+     "p": 0.9926
+    },
+    {
+     "class": "Honda Accord Coupe 2012",
+     "p": 0.0002
+    },
+    {
+     "class": "Chevrolet Tahoe Hybrid SUV 2012",
+     "p": 0.0001
+    },
+    {
+     "class": "Infiniti G Coupe IPL 2012",
+     "p": 0.0001
+    },
+    {
+     "class": "Acura RL Sedan 2012",
+     "p": 0.0001
+    }
+   ],
+   "classification_confidence": 0.9926,
+   "detection_confidence": 0.9431095123291016,
+   "gt_box": [
+    35.0,
+    22.0,
+    407.0,
+    295.0
+   ],
+   "best_iou": 0.969,
+   "classical_prediction": "Ford Ranger SuperCab 2011",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "similar_generation"
+   ],
+   "roi_mean_luminance": 122.3,
+   "box_wh": [
+    372,
+    273
+   ],
+   "correct": false,
+   "category": "similar_generation",
+   "diagnosis": "rule-based category 'similar_generation'; high-confidence error | visual review: Straight frontal view: the Accord Coupe and Sedan share almost the same front end; the body-style cue (door count, roofline) is not visible from this angle.",
+   "proposed_improvement": "higher input resolution / part-focused crops (grille, lights) or fine-grained attention; more examples of the confusable pair",
+   "improvement_tested": false,
+   "visual_review": "Straight frontal view: the Accord Coupe and Sedan share almost the same front end; the body-style cue (door count, roofline) is not visible from this angle."
+  },
+  {
+   "image_id": "cars_test/07246.jpg",
+   "split": "test",
+   "true_class": "Rolls-Royce Phantom Drophead Coupe Convertible 2012",
+   "predicted_class": "Rolls-Royce Phantom Drophead Coupe Convertible 2012",
+   "top5": [
+    {
+     "class": "Rolls-Royce Phantom Drophead Coupe Convertible 2012",
+     "p": 0.9941
+    },
+    {
+     "class": "Bentley Continental Supersports Conv. Convertible 2012",
+     "p": 0.0004
+    },
+    {
+     "class": "Mercedes-Benz 300-Class Convertible 1993",
+     "p": 0.0003
+    },
+    {
+     "class": "Volvo 240 Sedan 1993",
+     "p": 0.0001
+    },
+    {
+     "class": "BMW 6 Series Convertible 2007",
+     "p": 0.0001
+    }
+   ],
+   "classification_confidence": 0.9941,
+   "detection_confidence": 0.9485828280448914,
+   "gt_box": [
+    0.0,
+    5.0,
+    1511.0,
+    560.0
+   ],
+   "best_iou": 0.294,
+   "classical_prediction": "Lamborghini Aventador Coupe 2012",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "detector_miss",
+    "occlusion_truncation"
+   ],
+   "roi_mean_luminance": 134.2,
+   "box_wh": [
+    1511,
+    555
+   ],
+   "correct": true,
+   "category": "detector_miss",
+   "diagnosis": "rule-based category 'detector_miss'; detector failure | visual review: Composite marketing photo showing two views of the same car; the ground-truth box spans both, the detector boxes one car (IoU 0.29). Annotation convention, not a missed vehicle; classification on the GT crop is correct.",
+   "proposed_improvement": "lower detector threshold with user confirmation, or train with more small/occluded vehicles",
+   "improvement_tested": false,
+   "visual_review": "Composite marketing photo showing two views of the same car; the ground-truth box spans both, the detector boxes one car (IoU 0.29). Annotation convention, not a missed vehicle; classification on the GT crop is correct."
+  },
+  {
+   "image_id": "cars_test/02277.jpg",
+   "split": "test",
+   "true_class": "Nissan NV Passenger Van 2012",
+   "predicted_class": "Nissan NV Passenger Van 2012",
+   "top5": [
+    {
+     "class": "Nissan NV Passenger Van 2012",
+     "p": 0.9885
+    },
+    {
+     "class": "Ford Expedition EL SUV 2009",
+     "p": 0.0003
+    },
+    {
+     "class": "Mercedes-Benz Sprinter Van 2012",
+     "p": 0.0002
+    },
+    {
+     "class": "Chevrolet Sonic Sedan 2012",
+     "p": 0.0002
+    },
+    {
+     "class": "Rolls-Royce Phantom Drophead Coupe Convertible 2012",
+     "p": 0.0002
+    }
+   ],
+   "classification_confidence": 0.9885,
+   "detection_confidence": 0.9040774703025818,
+   "gt_box": [
+    30.0,
+    127.0,
+    398.0,
+    302.0
+   ],
+   "best_iou": 0.231,
+   "classical_prediction": "Lamborghini Diablo Coupe 2001",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "detector_miss"
+   ],
+   "roi_mean_luminance": 95.6,
+   "box_wh": [
+    368,
+    175
+   ],
+   "correct": true,
+   "category": "detector_miss",
+   "diagnosis": "rule-based category 'detector_miss'; detector failure | visual review: Two vans side by side; the default rule (highest-confidence box) picked the other van, so IoU with the annotated one is 0.23. This shows why the app lets the user choose the box.",
+   "proposed_improvement": "lower detector threshold with user confirmation, or train with more small/occluded vehicles",
+   "improvement_tested": false,
+   "visual_review": "Two vans side by side; the default rule (highest-confidence box) picked the other van, so IoU with the annotated one is 0.23. This shows why the app lets the user choose the box."
+  },
+  {
+   "image_id": "cars_test/05063.jpg",
+   "split": "test",
+   "true_class": "Dodge Caliber Wagon 2012",
+   "predicted_class": "Dodge Caliber Wagon 2007",
+   "top5": [
+    {
+     "class": "Dodge Caliber Wagon 2007",
+     "p": 0.991
+    },
+    {
+     "class": "Dodge Caliber Wagon 2012",
+     "p": 0.0004
+    },
+    {
+     "class": "Dodge Durango SUV 2007",
+     "p": 0.0002
+    },
+    {
+     "class": "BMW X3 SUV 2012",
+     "p": 0.0001
+    },
+    {
+     "class": "Honda Accord Coupe 2012",
+     "p": 0.0001
+    }
+   ],
+   "classification_confidence": 0.991,
+   "detection_confidence": 0.9438530802726746,
+   "gt_box": [
+    5.0,
+    23.0,
+    198.0,
+    109.0
+   ],
+   "best_iou": 0.955,
+   "classical_prediction": "Audi 100 Sedan 1994",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "similar_generation",
+    "low_resolution"
+   ],
+   "roi_mean_luminance": 86.2,
+   "box_wh": [
+    193,
+    86
+   ],
+   "correct": false,
+   "category": "low_resolution",
+   "diagnosis": "rule-based category 'low_resolution'; high-confidence error | visual review: Small image of a Dodge Caliber; 2012 vs 2007 differ in subtle grille/trim details. This class pair also has conflicting duplicate labels in the dataset.",
+   "proposed_improvement": "super-resolution or training-time downscale augmentation; show low-resolution warning",
+   "improvement_tested": false,
+   "visual_review": "Small image of a Dodge Caliber; 2012 vs 2007 differ in subtle grille/trim details. This class pair also has conflicting duplicate labels in the dataset."
+  },
+  {
+   "image_id": "cars_test/01161.jpg",
+   "split": "test",
+   "true_class": "Dodge Charger SRT-8 2009",
+   "predicted_class": "Dodge Charger Sedan 2012",
+   "top5": [
+    {
+     "class": "Dodge Charger Sedan 2012",
+     "p": 0.9903
+    },
+    {
+     "class": "Dodge Charger SRT-8 2009",
+     "p": 0.0004
+    },
+    {
+     "class": "Audi S4 Sedan 2007",
+     "p": 0.0003
+    },
+    {
+     "class": "Dodge Durango SUV 2012",
+     "p": 0.0003
+    },
+    {
+     "class": "Audi S4 Sedan 2012",
+     "p": 0.0002
+    }
+   ],
+   "classification_confidence": 0.9903,
+   "detection_confidence": 0.9513067603111267,
+   "gt_box": [
+    45.0,
+    52.0,
+    261.0,
+    143.0
+   ],
+   "best_iou": 0.967,
+   "classical_prediction": "BMW X3 SUV 2012",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "similar_generation",
+    "low_resolution"
+   ],
+   "roi_mean_luminance": 63.7,
+   "box_wh": [
+    216,
+    91
+   ],
+   "correct": false,
+   "category": "low_resolution",
+   "diagnosis": "rule-based category 'low_resolution'; high-confidence error | visual review: Charger SRT-8 2009 vs Charger 2012 Sedan: a different generation with similar silhouette at low resolution; badge/intake details unresolved.",
+   "proposed_improvement": "super-resolution or training-time downscale augmentation; show low-resolution warning",
+   "improvement_tested": false,
+   "visual_review": "Charger SRT-8 2009 vs Charger 2012 Sedan: a different generation with similar silhouette at low resolution; badge/intake details unresolved."
+  },
+  {
+   "image_id": "cars_test/07940.jpg",
+   "split": "test",
+   "true_class": "Aston Martin V8 Vantage Coupe 2012",
+   "predicted_class": "Aston Martin Virage Coupe 2012",
+   "top5": [
+    {
+     "class": "Aston Martin Virage Coupe 2012",
+     "p": 0.9784
+    },
+    {
+     "class": "Aston Martin V8 Vantage Coupe 2012",
+     "p": 0.0034
+    },
+    {
+     "class": "Lamborghini Aventador Coupe 2012",
+     "p": 0.0003
+    },
+    {
+     "class": "Ford Edge SUV 2012",
+     "p": 0.0003
+    },
+    {
+     "class": "BMW M3 Coupe 2012",
+     "p": 0.0003
+    }
+   ],
+   "classification_confidence": 0.9784,
+   "detection_confidence": 0.9531802535057068,
+   "gt_box": [
+    145.0,
+    128.0,
+    677.0,
+    407.0
+   ],
+   "best_iou": 0.984,
+   "classical_prediction": "McLaren MP4-12C Coupe 2012",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "lighting"
+   ],
+   "roi_mean_luminance": 47.3,
+   "box_wh": [
+    532,
+    279
+   ],
+   "correct": false,
+   "category": "lighting",
+   "diagnosis": "rule-based category 'lighting'; high-confidence error | visual review: Dark studio lighting with strong reflections; V8 Vantage vs Virage (both Aston Martin 2012 coupes) differ in subtle front details.",
+   "proposed_improvement": "stronger photometric augmentation; exposure normalisation",
+   "improvement_tested": false,
+   "visual_review": "Dark studio lighting with strong reflections; V8 Vantage vs Virage (both Aston Martin 2012 coupes) differ in subtle front details."
+  },
+  {
+   "image_id": "cars_test/03159.jpg",
+   "split": "test",
+   "true_class": "Suzuki SX4 Sedan 2012",
+   "predicted_class": "Acura TSX Sedan 2012",
+   "top5": [
+    {
+     "class": "Acura TSX Sedan 2012",
+     "p": 0.8771
+    },
+    {
+     "class": "Suzuki SX4 Sedan 2012",
+     "p": 0.0343
+    },
+    {
+     "class": "Hyundai Elantra Touring Hatchback 2012",
+     "p": 0.0123
+    },
+    {
+     "class": "Infiniti G Coupe IPL 2012",
+     "p": 0.0073
+    },
+    {
+     "class": "BMW 6 Series Convertible 2007",
+     "p": 0.0043
+    }
+   ],
+   "classification_confidence": 0.8771,
+   "detection_confidence": 0.9481596946716309,
+   "gt_box": [
+    144.0,
+    100.0,
+    890.0,
+    648.0
+   ],
+   "best_iou": 0.98,
+   "classical_prediction": "Bentley Continental GT Coupe 2012",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "lighting"
+   ],
+   "roi_mean_luminance": 54.3,
+   "box_wh": [
+    746,
+    548
+   ],
+   "correct": false,
+   "category": "lighting",
+   "diagnosis": "rule-based category 'lighting'; high-confidence error | visual review: Large website watermark ('CLICK HERE TO VIEW FULL RESOLUTION') covers the front of the car - text overlay occlusion plus dark lighting; predicted a different sedan (Acura TSX).",
+   "proposed_improvement": "stronger photometric augmentation; exposure normalisation",
+   "improvement_tested": false,
+   "visual_review": "Large website watermark ('CLICK HERE TO VIEW FULL RESOLUTION') covers the front of the car - text overlay occlusion plus dark lighting; predicted a different sedan (Acura TSX)."
+  },
+  {
+   "image_id": "cars_test/06597.jpg",
+   "split": "test",
+   "true_class": "Bugatti Veyron 16.4 Coupe 2009",
+   "predicted_class": "Bugatti Veyron 16.4 Convertible 2009",
+   "top5": [
+    {
+     "class": "Bugatti Veyron 16.4 Convertible 2009",
+     "p": 0.9919
+    },
+    {
+     "class": "Nissan Leaf Hatchback 2012",
+     "p": 0.0002
+    },
+    {
+     "class": "Bugatti Veyron 16.4 Coupe 2009",
+     "p": 0.0002
+    },
+    {
+     "class": "Tesla Model S Sedan 2012",
+     "p": 0.0002
+    },
+    {
+     "class": "Buick Regal GS 2012",
+     "p": 0.0002
+    }
+   ],
+   "classification_confidence": 0.9919,
+   "detection_confidence": 0.9416022896766663,
+   "gt_box": [
+    215.0,
+    44.0,
+    809.0,
+    665.0
+   ],
+   "best_iou": 0.971,
+   "classical_prediction": "Bugatti Veyron 16.4 Convertible 2009",
+   "deep_classical_disagree": false,
+   "categories_by_rule": [
+    "similar_generation",
+    "viewpoint"
+   ],
+   "roi_mean_luminance": 91.3,
+   "box_wh": [
+    594,
+    621
+   ],
+   "correct": false,
+   "category": "viewpoint",
+   "diagnosis": "rule-based category 'viewpoint'; high-confidence error | visual review: Frontal view: Veyron Coupe vs Convertible are identical from the front; the distinguishing roof is not visible - inherent viewpoint ambiguity.",
+   "proposed_improvement": "more frontal/rear training views; viewpoint-balanced sampling",
+   "improvement_tested": false,
+   "visual_review": "Frontal view: Veyron Coupe vs Convertible are identical from the front; the distinguishing roof is not visible - inherent viewpoint ambiguity."
+  },
+  {
+   "image_id": "cars_test/02796.jpg",
+   "split": "test",
+   "true_class": "Spyker C8 Convertible 2009",
+   "predicted_class": "Spyker C8 Coupe 2009",
+   "top5": [
+    {
+     "class": "Spyker C8 Coupe 2009",
+     "p": 0.9863
+    },
+    {
+     "class": "Bentley Continental GT Coupe 2012",
+     "p": 0.0003
+    },
+    {
+     "class": "Bugatti Veyron 16.4 Convertible 2009",
+     "p": 0.0002
+    },
+    {
+     "class": "Nissan Leaf Hatchback 2012",
+     "p": 0.0002
+    },
+    {
+     "class": "BMW X3 SUV 2012",
+     "p": 0.0002
+    }
+   ],
+   "classification_confidence": 0.9863,
+   "detection_confidence": 0.9125286340713501,
+   "gt_box": [
+    76.0,
+    8.0,
+    569.0,
+    479.0
+   ],
+   "best_iou": 0.956,
+   "classical_prediction": "Mercedes-Benz Sprinter Van 2012",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "similar_generation",
+    "viewpoint",
+    "occlusion_truncation"
+   ],
+   "roi_mean_luminance": 125.0,
+   "box_wh": [
+    493,
+    471
+   ],
+   "correct": false,
+   "category": "viewpoint",
+   "diagnosis": "rule-based category 'viewpoint'; high-confidence error | visual review: Rear view with doors open; Spyker C8 Convertible vs Coupe differ at the roof, which is ambiguous from this angle.",
+   "proposed_improvement": "more frontal/rear training views; viewpoint-balanced sampling",
+   "improvement_tested": false,
+   "visual_review": "Rear view with doors open; Spyker C8 Convertible vs Coupe differ at the roof, which is ambiguous from this angle."
+  },
+  {
+   "image_id": "cars_test/05757.jpg",
+   "split": "test",
+   "true_class": "Aston Martin V8 Vantage Coupe 2012",
+   "predicted_class": "Aston Martin Virage Coupe 2012",
+   "top5": [
+    {
+     "class": "Aston Martin Virage Coupe 2012",
+     "p": 0.9916
+    },
+    {
+     "class": "Chevrolet Traverse SUV 2012",
+     "p": 0.0001
+    },
+    {
+     "class": "Buick Verano Sedan 2012",
+     "p": 0.0001
+    },
+    {
+     "class": "Aston Martin V8 Vantage Coupe 2012",
+     "p": 0.0001
+    },
+    {
+     "class": "Suzuki SX4 Hatchback 2012",
+     "p": 0.0001
+    }
+   ],
+   "classification_confidence": 0.9916,
+   "detection_confidence": 0.9496101140975952,
+   "gt_box": [
+    4.0,
+    44.0,
+    300.0,
+    176.0
+   ],
+   "best_iou": 0.935,
+   "classical_prediction": "Aston Martin Virage Coupe 2012",
+   "deep_classical_disagree": false,
+   "categories_by_rule": [
+    "occlusion_truncation"
+   ],
+   "roi_mean_luminance": 129.2,
+   "box_wh": [
+    296,
+    132
+   ],
+   "correct": false,
+   "category": "occlusion_truncation",
+   "diagnosis": "rule-based category 'occlusion_truncation'; high-confidence error | visual review: Three-quarter view, car slightly cut off at the frame; V8 Vantage vs Virage confusion again (recurring pair).",
+   "proposed_improvement": "random-erasing/cutout at higher rates; occlusion-aware training",
+   "improvement_tested": false,
+   "visual_review": "Three-quarter view, car slightly cut off at the frame; V8 Vantage vs Virage confusion again (recurring pair)."
+  },
+  {
+   "image_id": "cars_test/07470.jpg",
+   "split": "test",
+   "true_class": "GMC Savana Van 2012",
+   "predicted_class": "Chevrolet Express Van 2007",
+   "top5": [
+    {
+     "class": "Chevrolet Express Van 2007",
+     "p": 0.989
+    },
+    {
+     "class": "Chevrolet Express Cargo Van 2007",
+     "p": 0.0008
+    },
+    {
+     "class": "GMC Savana Van 2012",
+     "p": 0.0004
+    },
+    {
+     "class": "Chevrolet Silverado 1500 Classic Extended Cab 2007",
+     "p": 0.0003
+    },
+    {
+     "class": "Audi V8 Sedan 1994",
+     "p": 0.0003
+    }
+   ],
+   "classification_confidence": 0.989,
+   "detection_confidence": 0.9521616101264954,
+   "gt_box": [
+    99.0,
+    1.0,
+    448.0,
+    200.0
+   ],
+   "best_iou": 0.974,
+   "classical_prediction": "Dodge Sprinter Cargo Van 2009",
+   "deep_classical_disagree": true,
+   "categories_by_rule": [
+    "occlusion_truncation"
+   ],
+   "roi_mean_luminance": 102.3,
+   "box_wh": [
+    349,
+    199
+   ],
+   "correct": false,
+   "category": "occlusion_truncation",
+   "diagnosis": "rule-based category 'occlusion_truncation'; high-confidence error | visual review: GMC Savana and Chevrolet Express are badge-engineered twins (same body); only the grille/badge differ and the van is cut off at the right edge.",
+   "proposed_improvement": "random-erasing/cutout at higher rates; occlusion-aware training",
+   "improvement_tested": false,
+   "visual_review": "GMC Savana and Chevrolet Express are badge-engineered twins (same body); only the grille/badge differ and the van is cut off at the right edge."
+  }
+ ],
+ "visual_review_note": "All 12 cases were reviewed visually by the developer on 2026-11-07; rule-based category kept, diagnosis refined."
+}
