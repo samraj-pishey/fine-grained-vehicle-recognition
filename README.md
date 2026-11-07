@@ -63,6 +63,8 @@ The production pipeline is **YOLO26n FP32 ONNX + EfficientNetV2-S 288 FP32 ONNX*
 - [Dataset, citation and licence](#dataset-citation-and-licence)
 
 ---
+<img width="3795" height="2585" alt="P5_T15_System_Architecture" src="https://github.com/user-attachments/assets/6e773eda-056b-4d09-ac28-8714c0fabc61" />
+
 
 ## How the system works
 
