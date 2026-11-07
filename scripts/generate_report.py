@@ -61,6 +61,7 @@ def main():
     bench = load("benchmark.json")
     final = load("final_test.json")
     freeze = load("freeze_record.json")
+    hist = load("history_provenance.json")
     exp = load("export_summary.json")
     e2e_val = load("end_to_end.json")
     deploy = load("deployment_measurements.json")
@@ -202,6 +203,10 @@ def main():
     w("## 12. Results on the official test split\n")
     if final:
         w(f"Frozen commit `{final['frozen_commit']}`, bundle `{final['model_bundle_id']}`.\n")
+        if hist:
+            w(f"*Note: the repository history was squashed into a single commit on {hist['squashed_utc']}, so the frozen "
+              "commit is no longer on GitHub (it is kept in an archived backup). The evaluated code and configuration "
+              "are byte-identical to the frozen state; see the appendix and `reports/results/history_provenance.json`.*\n")
         w(table(final["rows"], [("method", "method"), ("n", "n"), ("top-1", "top1"), ("top-5", "top5"),
                                 ("macro-F1", "macro_f1"), ("ECE", "ece_15"), ("NLL", "nll")],
                 {"top1": pct, "top5": pct, "macro_f1": f4, "ece_15": f4, "nll": f4}))
@@ -310,6 +315,13 @@ def main():
     w("\n## Appendix: configuration and provenance\n")
     w(f"Freeze record: `{json.dumps(freeze['frozen_commit']) if freeze else 'NOT RUN'}`. Configs: `configs/`. "
       "Acceptance ledger: `milestone_acceptance.yaml`.\n")
+    if hist:
+        w(f"**History squash ({hist['squashed_utc']}).** {hist['note']}\n")
+        w(f"Frozen tree: `{hist['frozen_tree']}`. {hist['verify']}\n")
+        w(table([{"path": p, "hash": f"`{h}`"} for p, h in hist["identical_at_freeze_and_8ca3b33"].items()],
+                [("path", "path"), ("git object hash (frozen = current)", "hash")]))
+        w(f"All {len(hist['scripts_identical_at_freeze_and_8ca3b33'])} scripts present at the freeze are unchanged "
+          "(per-file hashes in `history_provenance.json`). " + hist["changed_after_freeze_explanation"] + "\n")
     (ROOT / "reports" / "ACADEMIC_REPORT.md").write_text("\n".join(S) + "\n")
     print("wrote reports/ACADEMIC_REPORT.md")
 

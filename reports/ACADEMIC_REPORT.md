@@ -1,6 +1,6 @@
 # Intelligent Fine-Grained Vehicle Recognition and Analysis System
 
-*Technical and academic report — generated 2026-11-07 03:51 UTC from recorded artefacts by `scripts/generate_report.py`. Validation results come from a split of the official training set; official-test results are labelled **OFFICIAL TEST** and were computed once after configuration freeze.*
+*Technical and academic report — generated 2026-11-07 05:41 UTC from recorded artefacts by `scripts/generate_report.py`. Validation results come from a split of the official training set; official-test results are labelled **OFFICIAL TEST** and were computed once after configuration freeze.*
 
 ## Abstract
 
@@ -115,6 +115,8 @@ Model choice, temperature, fusion weight and rejection threshold were selected o
 ## 12. Results on the official test split
 
 Frozen commit `7dc0e0ae1661d6c3ed31c7a3ced2fe1e8dd23a61`, bundle `vr-yolo26n-efficientnet_v2_s-288-fp32-21bcac1`.
+
+*Note: the repository history was squashed into a single commit on 2026-11-07, so the frozen commit is no longer on GitHub (it is kept in an archived backup). The evaluated code and configuration are byte-identical to the frozen state; see the appendix and `reports/results/history_provenance.json`.*
 
 | method | n | top-1 | top-5 | macro-F1 | ECE | NLL |
 |---|---|---|---|---|---|---|
@@ -262,4 +264,23 @@ See abstract and results. Future work: part-based or attention-based fine-graine
 ## Appendix: configuration and provenance
 
 Freeze record: `"7dc0e0ae1661d6c3ed31c7a3ced2fe1e8dd23a61"`. Configs: `configs/`. Acceptance ledger: `milestone_acceptance.yaml`.
+
+**History squash (2026-11-07).** On 2026-11-07 the repository history was squashed into a single root commit (8ca3b33, 'Initial commit'). The frozen commit recorded in freeze_record.json and final_test.json (7dc0e0a) is therefore no longer on GitHub; it is preserved in the author's archived pre-squash backup. Git object hashes are content hashes, so the entries below let anyone confirm, from the public repository alone, that the evaluated code and configuration are byte-identical to the frozen state.
+
+Frozen tree: `0115c044b67f08711004fb5c616f9dd25a80b94f`. For each entry run `git rev-parse 8ca3b33:<path>` and compare with the hash recorded here.
+
+| path | git object hash (frozen = current) |
+|---|---|
+| src | `ffe9063b4f4510fd622671caf252a848cb623fcb` |
+| configs | `43802f041d7a239594b88f06536d54d5c070ea51` |
+| tests | `f5c9526b701887c25d77905b281758dbc160d63f` |
+| app.py | `b724fc49e2b586f286a921db824fcaddb59276bf` |
+| pyproject.toml | `ae5d0eaee686eee0821b66024d074290635fd7e9` |
+| uv.lock | `94838f29bd88b3dec9d805ee8e788740443383b0` |
+| requirements.txt | `39a30ffc7008943737e1b070cf13e8d782d8a87f` |
+| requirements | `faa5fea2ba3edc2d691d77f1d22afea3c8d8bd1c` |
+| Dockerfile | `77c4d638248772ff0d2160274b6e42b8c6f3a169` |
+| .streamlit | `d8de32d166d8dfcac5f509b27886f59bae2dbd0e` |
+
+All 23 scripts present at the freeze are unchanged (per-file hashes in `history_provenance.json`). Only post-evaluation outputs (results, figures, report, ledger, README) and one plotting script (scripts/generate_figures.py, which reads recorded results and runs no model) were added or modified after the freeze.
 

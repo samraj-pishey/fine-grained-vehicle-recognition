@@ -35,7 +35,7 @@ E_hybrid_confidence:
 F_research_integrity:
   robustness_6_conditions: {status: CONDITIONAL_PASS, evidence: reports/results/robustness.json, note: "392 validation images (reduced from 600 for time)"}
   failure_cases: {status: PASS, evidence: reports/results/failure_cases.json, note: "12 genuine cases, visually reviewed"}
-  test_freeze_and_single_evaluation: {status: PASS, evidence: "reports/results/freeze_record.json, final_test.json (commit 7dc0e0a)"}
+  test_freeze_and_single_evaluation: {status: PASS, evidence: "reports/results/freeze_record.json, final_test.json (commit 7dc0e0a)", note: "history squashed 2026-11-07, 7dc0e0a kept in archived backup; code/config byte-identity verifiable via reports/results/history_provenance.json"}
   academic_report: {status: PASS, evidence: reports/ACADEMIC_REPORT.md}
 G_optimisation:
   onnx_parity: {status: PASS, note: "200/200 top-1 agreement, max |dlogit| 1.5e-5"}
